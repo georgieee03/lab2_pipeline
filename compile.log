@@ -1,5 +1,5 @@
                          Chronologic VCS (TM)
-      Version T-2022.06-SP2-1_Full64 -- Sat Jun  7 03:20:45 2025
+      Version T-2022.06-SP2-1_Full64 -- Sat Jun  7 03:25:33 2025
 
                     Copyright (c) 1991 - 2023 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -35,9 +35,9 @@ Parsing design file 'src/datapath.sv'
 
 Error-[SE] Syntax error
   Following verilog source has syntax error :
-  "src/datapath.sv", 98: token is 'g_ID'
-  g_ID),
-      ^
+  "src/datapath.sv", 98: token is '_ID'
+  _ID),
+     ^
 
 1 warning
 1 error
