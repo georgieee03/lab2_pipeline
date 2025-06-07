@@ -95,7 +95,7 @@ module datapath(
    id_ex u_idex (
       .clk(clk), .reset(reset), .stall(stall),
       .memtoreg_in(memtoreg_ID), .memwrite_in(memtore
-g_ID),
+_ID),
       .alusrc_in(alusrc_ID),     .regdst_in(regdst_ID),
       .regwrite_in(regwrite_ID), .branch_in(branch_ID),
       .alucontrol_in(alucontrol_ID),
