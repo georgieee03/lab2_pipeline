@@ -1,0 +1,111 @@
+                         Chronologic VCS (TM)
+      Version T-2022.06-SP2-1_Full64 -- Sat Jun  7 03:03:44 2025
+
+                    Copyright (c) 1991 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more 
+  information regarding list of LCA features please refer to Chapter "LCA 
+  features" in the VCS Release Notes
+
+Warning : License for product VCS-BASE-COMPILE(946) will expire within 12 days, on: 18-jun-2025.
+
+If you would like to temporarily disable this message, set 
+ the VCS_LIC_EXPIRE_WARNING environment variable to the number of days
+before expiration that you want this message to start (the minimum is 0).
+Parsing design file 'src/adder.sv'
+Parsing design file 'src/alu.sv'
+Parsing design file 'src/controller.sv'
+Parsing design file 'src/datapath.sv'
+
+Warning-[IPDW] Identifier previously declared
+src/datapath.sv, 130
+  Second declaration for identifier 'regwrite_WB' ignored
+  Identifier 'regwrite_WB' previously declared as wire. [src/datapath.sv, 58]
+
+
+Warning-[IPDW] Identifier previously declared
+src/datapath.sv, 146
+  Second declaration for identifier 'writeback_data' ignored
+  Identifier 'writeback_data' previously declared as wire. [src/datapath.sv, 
+  60]
+
+Parsing design file 'src/dmem.sv'
+Parsing design file 'src/ex_mem.sv'
+Parsing design file 'src/flopr.sv'
+Parsing design file 'src/hazard_unit.sv'
+Parsing design file 'src/id_ex.sv'
+Parsing design file 'src/if_id.sv'
+Parsing design file 'src/imem.sv'
+Parsing design file 'src/mem_wb.sv'
+Parsing design file 'src/mips_pipeline.sv'
+Parsing design file 'src/mux2.sv'
+Parsing design file 'src/regfile.sv'
+Parsing design file 'src/signext.sv'
+Parsing design file 'src/sl2.sv'
+Parsing design file 'src/top.sv'
+Top Level Modules:
+       flopr
+       top
+No TimeScale specified
+
+Warning-[PCWM-W] Port connection width mismatch
+src/datapath.sv, 58
+"regfile rf( .clk (clk),  .we3 (regwrite_WB),  .ra1 (rs_ID),  .ra2 (rt_ID),  .wa3 (destReg_WB),  .wd3 (writeback_data),  .rd1 (rs_data_ID),  .rd2 (rt_data_ID));"
+  The following 1-bit expression is connected to 5-bit port "wa3" of module 
+  "regfile", instance "rf".
+  Expression: destReg_WB
+  Instantiated module defined at: "src/regfile.sv", 1
+  Use +lint=PCWM for more details.
+
+
+Warning-[PCWM-W] Port connection width mismatch
+src/datapath.sv, 58
+"regfile rf( .clk (clk),  .we3 (regwrite_WB),  .ra1 (rs_ID),  .ra2 (rt_ID),  .wa3 (destReg_WB),  .wd3 (writeback_data),  .rd1 (rs_data_ID),  .rd2 (rt_data_ID));"
+  The following 1-bit expression is connected to 32-bit port "wd3" of module 
+  "regfile", instance "rf".
+  Expression: writeback_data
+  Instantiated module defined at: "src/regfile.sv", 1
+  Use +lint=PCWM for more details.
+
+
+Warning-[PCWM-W] Port connection width mismatch
+src/datapath.sv, 133
+"mem_wb memwb_reg( .clk (clk),  .reset (reset),  .memtoreg_in (memtoreg_MEM),  .regwrite_in (regwrite_MEM),  .aluout_in (aluout_MEM),  .readdata_in (readdata),  .destReg_in (destReg_MEM),  .memtoreg_out (memtoreg_WB),  .regwrite_out (regwrite_WB),  .aluout_out (aluout_WB),  .readdata_out (readdata_WB),  .destReg_out (destReg_WB));"
+  The following 1-bit expression is connected to 5-bit port "destReg_out" of 
+  module "mem_wb", instance "memwb_reg".
+  Expression: destReg_WB
+  Instantiated module defined at: "src/mem_wb.sv", 1
+  Use +lint=PCWM for more details.
+
+
+Error-[ICSD] Illegal combination of drivers
+src/datapath.sv, 91
+  Illegal combination of structural drivers.
+  Variable "branch_target_EX" is driven by multiple structural drivers.
+  This variable is declared at
+  "src/datapath.sv", 91: logic [31:0] branch_target_EX;
+  The first driver is at "src/datapath.sv", 100: adder branch_add( .a 
+  (pc4_EX),  .b (branch_target_EX),  .y (branch_target_EX));
+  The second driver is at "src/datapath.sv", 99: sl2 u_sl2( .a (signext_EX),  
+  .y (branch_target_EX));
+
+6 warnings
+1 error
+CPU time: .145 seconds to compile
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
