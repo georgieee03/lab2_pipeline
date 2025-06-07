@@ -6,7 +6,7 @@ compile:
 
 sim: compile
 	@echo "=== Running simulation (writes fifo_tb.fsdb) ==="
-	./simv
+	./simv -ucli +fsdbfile=waves.fsdb
 
 verdi:
 	@echo "=== Launching Verdi on fifo_tb.fsdb ==="
@@ -20,6 +20,6 @@ clean_synth:
 	rm -rf *.syn *.pvl *.mr *.svf command.log  WORK rpt
 
 clean: clean_synth
-	rm -rf simv csrc simv.daidir fifo_tb.fsdb novas* *.key *.log verdi*
+	rm -rf simv csrc simv.daidir waves.fsdb novas* *.key *.log verdi*
 
 .PHONY: all clean clean_synth compile sim synth verdi
