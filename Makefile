@@ -6,7 +6,8 @@ compile:
 
 sim: compile
 	@echo "=== Running simulation (writes fifo_tb.fsdb) ==="
-	./simv -ucli +fsdbfile=waves.fsdb
+	./simv +fsdbfile=waves.fsdb +vcs+initreg+0 \
+	      -do "run -all; exit"
 
 verdi:
 	@echo "=== Launching Verdi on fifo_tb.fsdb ==="
